@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <!--
   ════════════════════════════════════════════════════════════════════
-  THÔNG TIN CẦN CẬP NHẬT TRƯỚC KHI CHẠY (tìm các ô màu vàng .todo trong trang):
-    1. [NGÀY TỔ CHỨC]          → ngày diễn ra workshop (vd: Thứ Năm · 26/06/2026)
-    2. [HẠN ĐĂNG KÝ]           → hạn chót giữ chỗ (vd: 23:59 ngày 24/06)
-    3. [SỐ CHỖ]                → tổng số chỗ giới hạn (vd: 30)
-    4. [GIÁ GỐC]               → giá gốc gạch ngang để neo giá (vd: 298.000đ)
-    5. TESTIMONIALS            → thay 3 cảm nhận MẪU bằng cảm nhận HỌC VIÊN THẬT
-    6. MENTOR STATS            → thay số liệu mentor bằng số thật
-    7. og:image                → link ảnh thumbnail khi share Facebook/Zalo
-    8. EVENT_DATE_ISO (script) → ngày giờ ISO để countdown chạy
+  CÒN CẦN CẬP NHẬT (phần còn lại đã điền: ngày 08/08/2026, giờ 19:30-21:00, giá 118.000đ):
+    1. [FANPAGE_URL]           → link Fanpage Facebook (2 chỗ: footer + nút nổi góc phải)
+    2. og:image                → link ảnh thumbnail 1200x630 khi share Facebook/Zalo
+  Đã bỏ theo yêu cầu: thanh số chỗ, hạn đăng ký, giá gốc gạch ngang, section lộ trình.
   Cấu hình thanh toán giữ nguyên trong khối <script> CONFIG ở cuối file.
   ════════════════════════════════════════════════════════════════════
 -->
@@ -17,10 +12,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workshop Kinh Doanh Hệ Thống · Hiểu Đúng Trước Khi Bắt Đầu | Thu Hương</title>
-  <meta name="description" content="Workshop chuyên sâu 3h online — Hiểu đúng bản đồ kinh doanh hệ thống trước khi bắt đầu. 19:30–22:00. Có ghi hình xem lại.">
+  <title>Workshop Kinh Doanh Hệ Thống — Hiểu Đúng Để Bứt Phá Thành Công | Thu Hương</title>
+  <meta name="description" content="Workshop online — Hiểu đúng kinh doanh hệ thống để bứt phá thành công. 19:30–21:00, Thứ Bảy 08/08/2026.">
   <meta property="og:title" content="Workshop Kinh Doanh Hệ Thống | Thu Hương">
-  <meta property="og:description" content="1 buổi tập trung, đi thẳng trọng tâm. Hiểu đúng trước khi bắt đầu.">
+  <meta property="og:description" content="1 buổi tập trung, đi thẳng trọng tâm. Hiểu đúng để bứt phá thành công.">
   <meta property="og:type" content="website">
   <!-- TODO: thay bằng link ảnh thật (1200×630) để có thumbnail khi share -->
   <meta property="og:image" content="[LINK_ANH_OG_1200x630]">
@@ -140,7 +135,6 @@
       <span class="script-accent text-2xl">Thu Hương</span>
       <div class="hidden md:flex items-center gap-6 text-sm text-body">
         <a href="#pain"      class="hover:text-rose transition-colors">Bạn đang ở đâu</a>
-        <a href="#schedule"  class="hover:text-rose transition-colors">Lộ trình</a>
         <a href="#takeaway"  class="hover:text-rose transition-colors">Bạn mang về</a>
         <a href="#mentor"    class="hover:text-rose transition-colors">Người hướng dẫn</a>
       </div>
@@ -158,22 +152,22 @@
     <div class="max-w-5xl mx-auto relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="fade-up">
-          <div class="eyebrow mb-4">Workshop chuyên sâu 3h · Online</div>
+          <div class="eyebrow mb-4">Workshop Online</div>
           <h1 class="font-extrabold leading-tight mb-5" style="font-family:'Playfair Display',serif;font-size:clamp(1.25rem,5.6vw,2.1rem);color:#2E1410;">
             <span style="display:block;white-space:nowrap;">Kinh Doanh Hệ Thống</span>
-            <span style="display:block;white-space:nowrap;color:#C2706A;">Hiểu Đúng Trước Khi Bắt Đầu</span>
+            <span style="display:block;color:#C2706A;">Hiểu Đúng Để Bứt Phá Thành Công</span>
           </h1>
           <p class="text-body leading-loose mb-6">
-            Không phải thêm kỹ năng. Không phải thêm chiến thuật. Mà là thấy rõ bản đồ — để bước đi đúng hướng ngay từ đầu.
+            Dành cho những người muốn kinh doanh hệ thống mà chưa biết bắt đầu từ đâu, hoặc đã nỗ lực nhiều năm nhưng chưa đạt kết quả như ý.
           </p>
 
           <!-- Date + time + format chips -->
           <div class="flex flex-wrap gap-3 mb-6">
             <div class="date-pill">
-              <span>📅</span> <span class="todo">[NGÀY TỔ CHỨC]</span>
+              <span>📅</span> Thứ Bảy · 08/08/2026
             </div>
             <div class="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-xs font-semibold text-heading">
-              <span>🕖</span> 19:30 – 22:00
+              <span>🕖</span> 19:30 – 21:00
             </div>
             <div class="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-xs font-semibold text-heading">
               <span>💻</span> Online · Zoom
@@ -181,14 +175,12 @@
           </div>
 
           <div class="flex flex-col sm:flex-row gap-4">
-            <button onclick="openModal()" class="btn-rose"><span>🌸</span> Đăng ký giữ chỗ →</button>
-            <a href="#schedule" class="btn-outline-rose text-center">Xem lộ trình 3h</a>
+            <button onclick="openModal()" class="btn-rose"><span>🌸</span> ĐĂNG KÝ GIỮ CHỖ</button>
           </div>
 
           <p class="text-xs text-muted mt-5">
             💛 Chỉ <strong class="text-heading">118.000đ</strong>
-            <span class="line-through opacity-60"><span class="todo">[GIÁ GỐC]</span></span>
-            · Có ghi hình xem lại · Thanh toán an toàn
+            · Thanh toán an toàn
           </p>
         </div>
 
@@ -204,7 +196,7 @@
               <span class="text-muted text-xs">Người hướng dẫn 💛</span>
             </div>
             <div class="absolute -top-3 -right-3 bg-white border border-border rounded-2xl px-3 py-2 shadow-md text-xs font-semibold text-heading">
-              19:30 – 22:00 🌸
+              19:30 – 21:00 🌸
             </div>
           </div>
         </div>
@@ -225,11 +217,11 @@
 
         <!-- Opening -->
         <div class="bg-white rounded-3xl px-8 py-7 border border-border shadow-sm">
-          <p class="text-body leading-loose">
+          <p class="text-body leading-loose text-[1.05rem]">
             ...rằng nếu sản phẩm tốt, nếu mình chân thành, nếu mình chịu khó học hỏi — thì
             <strong class="text-heading">chỉ cần làm đúng là sẽ có kết quả.</strong>
           </p>
-          <p class="text-body leading-loose mt-4">
+          <p class="text-body leading-loose text-[1.05rem] mt-4">
             Nhưng khi quan sát và bước vào môi trường kinh doanh hệ thống, tôi nhận ra mọi thứ không hề đơn giản.
             Rất nhiều người trẻ bước vào với khao khát tạo ra một dòng tiền tự do, nhưng rồi lại vội vã rời đi trong sự
             mệt mỏi và hoài nghi. Họ bỏ cuộc không phải vì lười biếng, mà vì đã vô tình bước vào
@@ -241,18 +233,18 @@
         <div class="grid sm:grid-cols-3 gap-4">
           <div class="bg-white rounded-2xl p-6 border border-border shadow-sm flex flex-col gap-3">
             <div class="text-3xl">💔</div>
-            <p class="font-bold text-heading text-sm" style="font-family:'Playfair Display',serif;">Đánh đổi những mối quan hệ thân thiết</p>
-            <p class="text-xs text-body leading-relaxed">Nhầm tưởng rằng kinh doanh là phải chèo kéo, nài nỉ người thân mua hàng ủng hộ. Nỗi sợ bị gắn mác "đa cấp", sợ bạn bè xa lánh trở thành rào cản tâm lý khiến bạn không dám bắt đầu, hoặc làm trong sự chắp vá, e dè.</p>
+            <p class="font-bold text-heading text-base" style="font-family:'Playfair Display',serif;">Đánh đổi những mối quan hệ thân thiết</p>
+            <p class="text-sm text-body leading-relaxed">Nhầm tưởng rằng kinh doanh là phải chèo kéo, nài nỉ người thân mua hàng ủng hộ. Nỗi sợ bị gắn mác "đa cấp", sợ bạn bè xa lánh trở thành rào cản tâm lý khiến bạn không dám bắt đầu, hoặc làm trong sự chắp vá, e dè.</p>
           </div>
           <div class="bg-white rounded-2xl p-6 border border-border shadow-sm flex flex-col gap-3">
             <div class="text-3xl">📦</div>
-            <p class="font-bold text-heading text-sm" style="font-family:'Playfair Display',serif;">Cái bẫy "ôm hàng" để đổi lấy thành tích</p>
-            <p class="text-xs text-body leading-relaxed">Thiếu kinh nghiệm thẩm định, bạn dễ bị cuốn vào việc vay mượn, nhập hàng số lượng lớn để giữ hạng hoặc nhận chiết khấu ảo. Kết quả là hàng tồn đọng, vốn cạn kiệt, thời gian bỏ ra nhiều nhưng thu nhập thực tế lại âm.</p>
+            <p class="font-bold text-heading text-base" style="font-family:'Playfair Display',serif;">Cái bẫy "ôm hàng" để đổi lấy thành tích</p>
+            <p class="text-sm text-body leading-relaxed">Thiếu kinh nghiệm thẩm định, bạn dễ bị cuốn vào việc vay mượn, nhập hàng số lượng lớn để giữ hạng hoặc nhận chiết khấu ảo. Kết quả là hàng tồn đọng, vốn cạn kiệt, thời gian bỏ ra nhiều nhưng thu nhập thực tế lại âm.</p>
           </div>
           <div class="bg-white rounded-2xl p-6 border border-border shadow-sm flex flex-col gap-3">
             <div class="text-3xl">🧩</div>
-            <p class="font-bold text-heading text-sm" style="font-family:'Playfair Display',serif;">Lạc lối giữa "động lực ảo" vì thiếu quy trình</p>
-            <p class="text-xs text-body leading-relaxed">Đi sự kiện thì hừng hực khí thế, nhưng về nhà lại loay hoay không biết bắt đầu từ đâu. Tham gia đủ khóa học nhưng kiến thức rời rạc, không có một bản đồ lộ trình rõ ràng để chuyển hóa năng lượng thành kết quả thực tế.</p>
+            <p class="font-bold text-heading text-base" style="font-family:'Playfair Display',serif;">Lạc lối giữa "động lực ảo" vì thiếu quy trình</p>
+            <p class="text-sm text-body leading-relaxed">Đi sự kiện thì hừng hực khí thế, nhưng về nhà lại loay hoay không biết bắt đầu từ đâu. Tham gia đủ khóa học nhưng kiến thức rời rạc, không có một bản đồ lộ trình rõ ràng để chuyển hóa năng lượng thành kết quả thực tế.</p>
           </div>
         </div>
 
@@ -320,49 +312,13 @@
     </div>
   </section>
 
-  <!-- ===== SCHEDULE / AGENDA (NEW) ===== -->
-  <section id="schedule" class="py-20 px-6 bg-tint">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12 fade-up">
-        <div class="eyebrow mb-3">Lộ trình buổi học</div>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-3">Buổi học diễn ra thế nào?</h2>
-        <p class="text-body text-sm max-w-lg mx-auto">Một buổi đi thẳng trọng tâm — không lan man, không "bơm" cảm xúc. Buổi học gồm 3 phần chính:</p>
-      </div>
-
-      <div class="bg-white rounded-3xl border border-border shadow-sm px-8 py-4 fade-up">
-        <div class="sched-row">
-          <div class="sched-time">Phần 1</div>
-          <div>
-            <p class="font-semibold text-heading text-sm">Mở đầu &amp; định khung tư duy</p>
-            <p class="text-xs text-body mt-1">Gọi tên đúng vấn đề bạn đang gặp, và 3 cái bẫy khiến nhiều người bỏ cuộc.</p>
-          </div>
-        </div>
-        <div class="sched-row">
-          <div class="sched-time">Phần 2</div>
-          <div>
-            <p class="font-semibold text-heading text-sm">Nội dung chính</p>
-            <p class="text-xs text-body mt-1">Bức tranh tổng quan về Kinh Doanh Hệ Thống, phân biệt các mô hình và tiêu chí thẩm định để không chọn nhầm con đường.</p>
-          </div>
-        </div>
-        <div class="sched-row">
-          <div class="sched-time">Phần 3</div>
-          <div>
-            <p class="font-semibold text-heading text-sm">Hỏi &amp; Đáp trực tiếp với Thu Hương</p>
-            <p class="text-xs text-body mt-1">Giải đáp tình huống riêng của bạn + hướng dẫn dùng Template kế hoạch cá nhân.</p>
-          </div>
-        </div>
-      </div>
-      <p class="text-center text-xs text-muted mt-5 fade-up">📍 Toàn bộ gói gọn trong 1 buổi 3h (19:30–22:00), điều chỉnh linh hoạt theo nhu cầu của lớp.</p>
-    </div>
-  </section>
-
   <!-- ===== TAKEAWAY ===== -->
   <section id="takeaway" class="py-20 px-6 bg-surface">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12 fade-up">
         <div class="eyebrow mb-3">Sau 1 buổi tập trung, đi thẳng trọng tâm</div>
         <h2 class="text-3xl sm:text-4xl font-bold mb-4">Bạn mang về điều gì?</h2>
-        <p class="text-body max-w-xl mx-auto text-sm">Kết thúc 3 tiếng, bạn rời đi với <strong class="text-heading">4 thứ cụ thể</strong> — không phải lý thuyết mơ hồ, mà là sự rõ ràng trong đầu và trong bước tiếp theo.</p>
+        <p class="text-body max-w-xl mx-auto text-sm">Kết thúc buổi học, bạn mang về <strong class="text-heading">bốn món quà cụ thể</strong> — không phải lý thuyết mơ hồ, mà là những thứ bạn dùng được ngay: một bức tranh rõ ràng trong đầu, hai bộ tài liệu để tra cứu &amp; lên kế hoạch, và bước đi tiếp theo cho riêng mình.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-5 fade-up">
@@ -423,7 +379,7 @@
             </div>
             <h3 class="font-bold text-heading" style="font-family:'Playfair Display',serif;">Kiến thức nền tảng <span class="text-xs font-normal px-2 py-0.5 rounded-full ml-1" style="background:#F0D4CF;color:#A0504A;">+ E-book</span></h3>
           </div>
-          <p class="text-body text-sm leading-relaxed">Bộ khái niệm cơ bản và tiêu chí đánh giá, đóng gói thành E-book để bạn tra cứu lại bất cứ lúc nào — kể cả khi đang cân nhắc một cơ hội mới trong tương lai.</p>
+          <p class="text-body text-sm leading-relaxed">Bộ khái niệm cơ bản và tiêu chí đánh giá, đóng gói thành E-book <strong class="text-heading">"Đúng và Sai trong kinh doanh hệ thống"</strong> để bạn tra cứu lại bất cứ lúc nào — kể cả khi đang cân nhắc một cơ hội mới trong tương lai.</p>
         </div>
 
         <!-- Card 4 -->
@@ -441,14 +397,14 @@
             </div>
             <h3 class="font-bold text-heading" style="font-family:'Playfair Display',serif;">Template kế hoạch cá nhân hóa</h3>
           </div>
-          <p class="text-body text-sm leading-relaxed">Mẫu kế hoạch xây hệ thống thông minh — bạn điền vào và tối ưu theo đúng thời gian, nguồn lực và mục tiêu của riêng mình. <strong class="text-heading">Không phải template cho "người lý tưởng"</strong>, mà cho bạn thật.</p>
+          <p class="text-body text-sm leading-relaxed">Mẫu kế hoạch để bạn điền vào và tự lên lộ trình theo thời gian, nguồn lực và mục tiêu của riêng mình.</p>
         </div>
 
       </div>
 
       <div class="text-center mt-10 fade-up">
-        <button onclick="openModal()" class="btn-rose"><span>🌸</span> Đăng ký giữ chỗ →</button>
-        <p class="text-xs text-muted mt-3">Online · Khung giờ 19:30–22:00 · Có ghi hình xem lại</p>
+        <button onclick="openModal()" class="btn-rose"><span>🌸</span> ĐĂNG KÝ GIỮ CHỖ</button>
+        <p class="text-xs text-muted mt-3">Online · Khung giờ 19:30–21:00</p>
       </div>
     </div>
   </section>
@@ -486,7 +442,7 @@
             Hành trình đi tìm giải pháp bảo vệ con người từ gốc rễ đã dẫn tôi đến với kinh doanh hệ thống tử tế — nơi kết hợp giữa an toàn tài chính và việc chăm sóc sức khỏe chủ động.
           </p>
           <p class="text-body leading-loose text-sm">
-            Tôi tổ chức workshop này không bằng những lời hô hào làm giàu sau một đêm. Tôi mong muốn trao cho bạn một <strong class="text-heading">tấm bản đồ rõ ràng, logic và không ảo tưởng</strong> để bạn tự tin thẩm định cơ hội cho chính mình.
+            Tôi tổ chức workshop này không bằng những lời hô hào làm giàu sau một đêm. Tôi mong muốn trao cho bạn một <strong class="text-heading">tấm bản đồ rõ ràng, logic và không ảo tưởng</strong> để bạn tự tin và sáng suốt lựa chọn cơ hội cho chính mình.
           </p>
 
           <!-- Credibility stat — nền tảng thật của mentor -->
@@ -597,8 +553,8 @@
 
       <!-- Date + countdown -->
       <div class="fade-up mb-8">
-        <p class="date-pill mb-5"><span>📅</span> <span class="todo">[NGÀY TỔ CHỨC]</span> · 19:30 – 22:00</p>
-        <p class="text-xs text-muted mb-3">Hạn đăng ký còn lại</p>
+        <p class="date-pill mb-5"><span>📅</span> Thứ Bảy · 08/08/2026 · 19:30 – 21:00</p>
+        <p class="text-xs text-muted mb-3">Workshop bắt đầu sau</p>
         <div class="countdown" id="countdown">
           <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-lbl">Ngày</div></div>
           <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-lbl">Giờ</div></div>
@@ -608,36 +564,25 @@
       </div>
 
       <div class="bg-white rounded-3xl border-2 p-10 shadow-md relative fade-up" style="border-color:#C2706A;">
-        <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-white text-xs px-6 py-1.5 rounded-full whitespace-nowrap font-bold" style="background:#C2706A;">Online · 19:30 – 22:00</div>
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-white text-xs px-6 py-1.5 rounded-full whitespace-nowrap font-bold" style="background:#C2706A;">Online · 19:30 – 21:00</div>
 
         <div class="flex items-baseline justify-center gap-3 mb-1">
-          <p class="text-base line-through text-muted"><span class="todo">[GIÁ GỐC]</span></p>
           <p class="text-4xl font-extrabold text-heading">118.000đ</p>
         </div>
         <p class="text-sm mb-6" style="color:#C2706A;">Giá ưu đãi ra mắt · Thanh toán an toàn</p>
 
-        <!-- Scarcity / seats -->
-        <div class="bg-tint rounded-2xl p-4 mb-7 text-left">
-          <div class="flex justify-between text-xs font-semibold text-heading mb-2">
-            <span>🔥 Số chỗ giới hạn: <span class="todo">[SỐ CHỖ]</span></span>
-            <span style="color:#C2706A;">Sắp đầy</span>
-          </div>
-          <div class="seat-bar"><div class="seat-fill" style="width:75%;"></div></div>
-          <p class="text-xs text-muted mt-2">Hạn đăng ký: <span class="todo">[HẠN ĐĂNG KÝ]</span> — giữ lớp nhỏ để đảm bảo Q&amp;A.</p>
-        </div>
-
         <ul class="text-left space-y-3 mb-8 text-body text-sm">
-          <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> 1 buổi workshop chuyên sâu 3h online (19:30 – 22:00)</li>
+          <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> 1 buổi workshop online (19:30 – 21:00)</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> Bức tranh tổng quan về kinh doanh hệ thống</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> Hiểu rõ các mô hình KDHT — không chọn nhầm từ đầu</li>
-          <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> E-book kiến thức nền tảng &amp; tiêu chí đánh giá</li>
+          <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> E-book "Đúng và Sai trong kinh doanh hệ thống"</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> Template kế hoạch cá nhân hóa</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> Q&amp;A trực tiếp với Thu Hương</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> <strong class="text-heading">Ghi hình xem lại</strong> — bận buổi tối vẫn không bỏ lỡ</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2706A;">✓</span> Cộng đồng học viên qua Zalo group</li>
         </ul>
-        <button onclick="openModal()" class="btn-rose w-full text-center justify-center"><span>🌸</span> Đăng ký giữ chỗ →</button>
-        <p class="text-xs text-muted mt-4">💛 Đăng ký sớm để giữ chỗ · Có ghi hình xem lại · Thanh toán an toàn</p>
+        <button onclick="openModal()" class="btn-rose w-full text-center justify-center"><span>🌸</span> ĐĂNG KÝ GIỮ CHỖ</button>
+        <p class="text-xs text-muted mt-4">💛 Đăng ký sớm để giữ chỗ · Thanh toán an toàn</p>
       </div>
     </div>
   </section>
@@ -657,7 +602,7 @@
             <span class="faq-icon text-xl ml-4 flex-shrink-0" style="color:#C2706A;">+</span>
           </button>
           <div class="faq-content px-6 pb-5 text-body text-sm leading-loose">
-            Workshop diễn ra vào <span class="todo">[NGÀY TỔ CHỨC]</span>, khung giờ 19:30 – 22:00, hình thức online qua Zoom. Link Zoom &amp; tài liệu được gửi qua Zalo group trước buổi học 24h.
+            Workshop diễn ra vào Thứ Bảy 08/08/2026, khung giờ 19:30 – 21:00, hình thức online qua Zoom. Link Zoom &amp; tài liệu được gửi qua Zalo group trước buổi học 24h.
           </div>
         </div>
 
@@ -667,7 +612,7 @@
             <span class="faq-icon text-xl ml-4 flex-shrink-0" style="color:#C2706A;">+</span>
           </button>
           <div class="faq-content px-6 pb-5 text-body text-sm leading-loose">
-            Có. Buổi học được ghi hình và chia sẻ lại cho học viên đã đăng ký qua Zalo group, nên dù bận đột xuất bạn vẫn không bỏ lỡ nội dung. <span class="todo">[Ghi rõ thời hạn xem lại nếu có giới hạn, vd: trong 7 ngày]</span>.
+            Có. Buổi học được ghi hình và chia sẻ lại cho học viên đã đăng ký qua Zalo group, nên dù bận đột xuất bạn vẫn không bỏ lỡ nội dung.
           </div>
         </div>
 
@@ -735,8 +680,8 @@
       <p class="text-body mb-8 text-sm leading-loose max-w-lg mx-auto">
         Không cần nhiều thời gian. Không cần bỏ việc ngay. Chỉ cần 1 buổi tập trung — để bạn thấy rõ mình đang ở đâu và cần làm gì tiếp theo.
       </p>
-      <button onclick="openModal()" class="btn-rose inline-flex"><span>🌸</span> Đăng ký giữ chỗ →</button>
-      <p class="text-xs text-muted mt-4">💛 <span class="todo">[NGÀY TỔ CHỨC]</span> · Online · 19:30–22:00 · Có ghi hình xem lại</p>
+      <button onclick="openModal()" class="btn-rose inline-flex"><span>🌸</span> ĐĂNG KÝ GIỮ CHỖ</button>
+      <p class="text-xs text-muted mt-4">💛 Thứ Bảy · 08/08/2026 · Online · 19:30–21:00</p>
       <p class="script-accent text-2xl mt-6" style="color:#C2706A;">— Thu Hương 💛</p>
     </div>
   </section>
@@ -745,21 +690,20 @@
   <footer style="background:#2E1410;" class="text-blush py-12 px-6">
     <div class="max-w-5xl mx-auto text-center">
       <p class="script-accent text-3xl mb-3" style="color:#F8C8A8;">Thu Hương</p>
-      <p class="text-sm opacity-60 mb-6" style="color:#F8E8E4;">Workshop Kinh Doanh Hệ Thống · Hiểu Đúng Trước Khi Bắt Đầu</p>
+      <p class="text-sm opacity-60 mb-6" style="color:#F8E8E4;">Workshop Kinh Doanh Hệ Thống · Hiểu Đúng Để Bứt Phá Thành Công</p>
       <div class="flex flex-wrap justify-center gap-6 text-xs mb-6" style="opacity:0.5;color:#F8E8E4;">
         <a href="#faq" class="hover:opacity-100 transition">FAQ</a>
-        <a href="#schedule" class="hover:opacity-100 transition">Lộ trình</a>
         <a href="#mentor" class="hover:opacity-100 transition">Về Thu Hương</a>
-        <a href="https://zalo.me/0858673931" target="_blank" class="hover:opacity-100 transition">Liên hệ Zalo</a>
+        <a href="[FANPAGE_URL]" target="_blank" class="hover:opacity-100 transition">Liên hệ Fanpage</a>
       </div>
       <p class="text-xs" style="opacity:0.3;color:#F8E8E4;">&copy; 2026 · Workshop Kinh Doanh Hệ Thống</p>
     </div>
   </footer>
 
-  <!-- Floating Zalo -->
-  <a href="https://zalo.me/0858673931" target="_blank"
-     class="fixed bottom-6 right-6 z-50 bg-blue-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-    <svg viewBox="0 0 48 48" width="28" height="28" fill="white"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm3 28h-3v-9h3v9zm-1.5-10.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 10.5h-3v-5c0-1.1-.4-1.5-1.2-1.5-.9 0-1.3.5-1.3 1.5V32h-3V23h3v1.3c.6-.9 1.5-1.3 2.7-1.3 1.9 0 2.8 1.3 2.8 3.5V32z"/></svg>
+  <!-- Floating Fanpage -->
+  <a href="[FANPAGE_URL]" target="_blank" aria-label="Liên hệ Fanpage"
+     class="fixed bottom-6 right-6 z-50 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform" style="background:#1877F2;">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
   </a>
 
   <!-- REGISTRATION MODAL -->
@@ -769,7 +713,7 @@
         <button onclick="closeModal()" class="absolute top-4 right-4 text-muted hover:text-heading text-2xl leading-none">&times;</button>
         <div class="eyebrow mb-2">Đăng ký workshop</div>
         <h3 class="text-2xl font-bold text-heading mb-1">Giữ chỗ của bạn 🌸</h3>
-        <p class="text-body text-xs mb-6">Workshop chuyên sâu 3h · Online · 19:30–22:00 · <span class="todo">[NGÀY TỔ CHỨC]</span></p>
+        <p class="text-body text-xs mb-6">Workshop Online · 19:30–21:00 · Thứ Bảy · 08/08/2026</p>
         <div class="space-y-4">
           <div>
             <label class="block text-xs font-semibold text-heading mb-1">Họ và tên *</label>
@@ -844,7 +788,7 @@
   var SEPAY_KEY    = '';            // SePay API key
 
   // Ngày giờ hạn đăng ký (ISO) để countdown chạy. VD: '2026-06-24T23:59:00+07:00'
-  var EVENT_DATE_ISO = '[YYYY-MM-DDTHH:MM:SS+07:00]';
+  var EVENT_DATE_ISO = '2026-08-08T19:30:00+07:00';
   // ───────────────────────────────────────────────────────────────
 
   var regName = '', regPhone = '', regEmail = '', regCode = '';
