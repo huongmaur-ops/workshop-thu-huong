@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <!--
   ════════════════════════════════════════════════════════════════════
-  CÒN CẦN CẬP NHẬT (phần còn lại đã điền: ngày 08/08/2026, giờ 19:30-21:00, giá 118.000đ):
+  REV9 — pivot nội dung "giáo dục trung lập" (xem plans/260623-1603-workshop-kdht-mentor-pivot/).
+  Thay đổi Rev9: tiêu đề "Đi Đường Dài" (bỏ "Bứt Phá"); thêm disclaimer thu nhập + Phiếu thu (không VAT);
+    pricing thêm nhóm hỗ trợ 30 ngày; form thêm câu hỏi đối tượng (mới/đang làm) + checkbox đồng ý;
+    tiết chế ngôn ngữ "thụ động".
+  Đã bỏ theo yêu cầu: đồng hồ đếm ngược, dòng cam kết hoàn tiền, khối disclosure vai trò (sẽ nói trực tiếp trong buổi).
+
+  CÒN CẦN CẬP NHẬT:
     1. [FANPAGE_URL]           → link Fanpage Facebook (2 chỗ: footer + nút nổi góc phải)
     2. og:image                → link ảnh thumbnail 1200x630 khi share Facebook/Zalo
-  Đã bỏ theo yêu cầu: thanh số chỗ, hạn đăng ký, giá gốc gạch ngang, section lộ trình.
-  Cấu hình thanh toán giữ nguyên trong khối <script> CONFIG ở cuối file.
+
+  ⚠️ CHƯA AN TOÀN ĐỂ BÁN VÉ THẬT (Phase 3 backend chưa làm):
+    - Nút "Tôi đã chuyển khoản" hiện cho qua ngay (xác nhận giả) — cần đối soát SePay server-side.
+    - SEPAY_KEY / TG_BOT_TOKEN nếu điền sẽ lộ ở client — phải chuyển sang backend serverless.
+    Xem phase-03-backend-toi-thieu.md trước khi mở bán.
   ════════════════════════════════════════════════════════════════════
 -->
 <html lang="vi">
 <head>
+  <!-- Đánh dấu JS hoạt động — chỉ khi đó mới bật hiệu ứng ẩn/hiện .fade-up (tránh trang trống nếu JS lỗi) -->
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workshop Kinh Doanh Hệ Thống — Hiểu Đúng Để Bứt Phá Thành Công | Thu Hương</title>
-  <meta name="description" content="Workshop online — Hiểu đúng kinh doanh hệ thống để bứt phá thành công. 19:30–21:00, Thứ Bảy 08/08/2026.">
+  <title>Workshop Kinh Doanh Hệ Thống — Hiểu Đúng Để Đi Đường Dài | Thu Hương</title>
+  <meta name="description" content="Workshop online — Hiểu đúng kinh doanh hệ thống để đi đường dài, bền vững. 19:30–21:00, Thứ Bảy 08/08/2026.">
   <meta property="og:title" content="Workshop Kinh Doanh Hệ Thống | Thu Hương">
-  <meta property="og:description" content="1 buổi tập trung, đi thẳng trọng tâm. Hiểu đúng để bứt phá thành công.">
+  <meta property="og:description" content="1 buổi tập trung, đi thẳng trọng tâm. Hiểu đúng để đi đường dài.">
   <meta property="og:type" content="website">
   <!-- TODO: thay bằng link ảnh thật (1200×630) để có thumbnail khi share -->
   <meta property="og:image" content="[LINK_ANH_OG_1200x630]">
@@ -53,7 +64,7 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.85; color: #6B3D38; background: #FFFBFA; }
+    body { font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.85; color: #6B3D38; background: #FFFBFA; overflow-x: hidden; }
     p { text-wrap: pretty; }
     h1, h2, h3 { text-wrap: balance; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; color: #2E1410; text-wrap: balance; }
@@ -67,8 +78,10 @@
     }
 
     .blob { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    /* Mặc định nội dung HIỆN; chỉ ẩn-để-animate khi JS bật (html.js). Tránh trang trống khi JS/CDN lỗi. */
+    .fade-up { opacity: 1; transform: none; }
+    .js .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .js .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #FFFBFA; }
@@ -134,9 +147,9 @@
     <div class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
       <span class="script-accent text-2xl">Thu Hương</span>
       <div class="hidden md:flex items-center gap-6 text-sm text-body">
-        <a href="#pain"      class="hover:text-rose transition-colors">Bạn đang ở đâu</a>
-        <a href="#takeaway"  class="hover:text-rose transition-colors">Bạn mang về</a>
-        <a href="#mentor"    class="hover:text-rose transition-colors">Người hướng dẫn</a>
+        <a href="#pain"      class="hover:text-rose transition-colors">Bạn đang ở đâu?</a>
+        <a href="#takeaway"  class="hover:text-rose transition-colors">Bạn nhận được gì?</a>
+        <a href="#mentor"    class="hover:text-rose transition-colors">Người đồng hành</a>
       </div>
       <button onclick="openModal()" class="btn-rose text-sm py-2.5 px-5">
         <span>🌸</span> Đăng ký
@@ -154,8 +167,8 @@
         <div class="fade-up">
           <div class="eyebrow mb-4">Workshop Online</div>
           <h1 class="font-extrabold leading-tight mb-5" style="font-family:'Playfair Display',serif;color:#2E1410;">
-            <span style="display:block;white-space:nowrap;font-size:clamp(1.7rem,6.4vw,2.7rem);">Kinh Doanh Hệ Thống</span>
-            <span style="display:block;white-space:nowrap;color:#C2564C;font-size:clamp(1.15rem,4.9vw,1.9rem);margin-top:0.1em;">Hiểu Đúng Để Bứt Phá Thành Công</span>
+            <span style="display:block;font-size:clamp(1.5rem,6.4vw,2.7rem);">Kinh Doanh Hệ Thống</span>
+            <span style="display:block;color:#C2564C;font-size:clamp(1.05rem,4.9vw,1.9rem);margin-top:0.1em;">Hiểu Đúng Để Đi Đường Dài</span>
           </h1>
           <p class="text-body leading-loose mb-6">
             Dành cho những người muốn kinh doanh hệ thống mà chưa biết bắt đầu từ đâu,<br>hoặc đã nỗ lực nhiều năm nhưng chưa đạt kết quả như ý.
@@ -193,7 +206,7 @@
             </div>
             <div class="absolute -left-4 bg-white border-2 rounded-2xl px-4 py-3 shadow-lg text-xs font-semibold text-heading" style="border-color:#C2564C;top:calc(100% - 12px);">
               <span class="script-accent text-lg block mb-0.5">Thu Hương</span>
-              <span class="text-muted text-xs">Người hướng dẫn 💛</span>
+              <span class="text-muted text-xs">Người đồng hành 💛</span>
             </div>
             <div class="absolute -top-3 -right-3 bg-white border border-border rounded-2xl px-3 py-2 shadow-md text-xs font-semibold text-heading">
               19:30 – 21:00 🌸
@@ -339,7 +352,7 @@
             </div>
             <h3 class="font-bold text-heading" style="font-family:'Playfair Display',serif;">Bức tranh tổng quan về KDHT</h3>
           </div>
-          <p class="text-body text-base leading-relaxed">Điểm mạnh thật sự của kinh doanh hệ thống là gì, vì sao nó có thể tạo ra dòng tiền thụ động, và <strong class="text-heading">những điều kiện thực sự cần có</strong> để điều đó xảy ra.</p>
+          <p class="text-body text-base leading-relaxed">Điểm mạnh thật sự của kinh doanh hệ thống là gì, vì sao nó có thể tạo ra nguồn thu nhập bền vững, và <strong class="text-heading">những điều kiện thực sự cần có</strong> để điều đó xảy ra.</p>
         </div>
 
         <!-- Card 2 -->
@@ -413,7 +426,7 @@
   <section id="mentor" class="py-20 px-6 bg-surface">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12 fade-up">
-        <div class="eyebrow mb-3">Người hướng dẫn</div>
+        <div class="eyebrow mb-3">Người đồng hành</div>
         <h2 class="text-3xl font-bold">Thu Hương là ai?</h2>
       </div>
       <div class="grid md:grid-cols-5 gap-10 items-center fade-up">
@@ -480,7 +493,7 @@
               <span class="text-lg mt-0.5 flex-shrink-0">💼</span>
               <div>
                 <p class="font-semibold text-sm" style="color:#5A3E00;">Đang đi làm full-time</p>
-                <p class="text-xs mt-1" style="color:#7A5A10;">Muốn có thêm thu nhập thụ động, xây dựng từng bước song song mà không cần bỏ việc ngay.</p>
+                <p class="text-xs mt-1" style="color:#7A5A10;">Muốn xây thêm một nguồn thu nhập từng bước, song song mà không cần bỏ việc ngay.</p>
               </div>
             </li>
             <li class="flex gap-3 items-start">
@@ -548,20 +561,13 @@
       <div class="eyebrow mb-3 fade-up">Đăng ký tham dự</div>
       <h2 class="text-3xl sm:text-4xl font-bold mb-3 fade-up">1 Buổi · Rõ Ràng Cả Bản Đồ</h2>
 
-      <!-- Date + countdown -->
+      <!-- Date -->
       <div class="fade-up mb-8">
-        <p class="date-pill mb-5"><span>📅</span> Thứ Bảy · 08/08/2026 · 19:30 – 21:00</p>
-        <p class="text-xs text-muted mb-3">Workshop bắt đầu sau</p>
-        <div class="countdown" id="countdown">
-          <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-lbl">Ngày</div></div>
-          <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-lbl">Giờ</div></div>
-          <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-lbl">Phút</div></div>
-          <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-lbl">Giây</div></div>
-        </div>
+        <p class="date-pill"><span>📅</span> Thứ Bảy · 08/08/2026 · 19:30 – 21:00</p>
       </div>
 
       <div class="bg-white rounded-3xl border-2 p-10 shadow-md relative fade-up" style="border-color:#C2564C;">
-        <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-white text-xs px-6 py-1.5 rounded-full whitespace-nowrap font-bold" style="background:#C2564C;">Online · 19:30 – 21:00</div>
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-white text-xs px-6 py-1.5 rounded-full whitespace-nowrap font-bold" style="background:#C2564C;">Online</div>
 
         <div class="flex items-baseline justify-center gap-3 mb-1">
           <p class="text-4xl font-extrabold text-heading">118.000đ</p>
@@ -575,10 +581,11 @@
           <li class="flex gap-3"><span class="font-bold" style="color:#C2564C;">✓</span> E-book "Đúng và Sai trong kinh doanh hệ thống"</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2564C;">✓</span> Template kế hoạch cá nhân hóa</li>
           <li class="flex gap-3"><span class="font-bold" style="color:#C2564C;">✓</span> Q&amp;A trực tiếp với Thu Hương</li>
-          <li class="flex gap-3"><span class="font-bold" style="color:#C2564C;">✓</span> Cộng đồng học viên qua Fanpage</li>
+          <li class="flex gap-3"><span class="font-bold" style="color:#C2564C;">✓</span> Tham gia nhóm hỗ trợ cộng đồng 30 ngày</li>
         </ul>
         <button onclick="openModal()" class="btn-rose w-full text-center justify-center"><span>🌸</span> ĐĂNG KÝ GIỮ CHỖ</button>
         <p class="text-xs text-muted mt-4">💛 Đăng ký sớm để giữ chỗ · Thanh toán an toàn</p>
+        <p class="text-[11px] text-muted mt-3 leading-relaxed">Nội dung mang tính giáo dục, không cam kết thu nhập; kết quả tùy nỗ lực mỗi người.</p>
       </div>
     </div>
   </section>
@@ -608,7 +615,7 @@
             <span class="faq-icon text-xl ml-4 flex-shrink-0" style="color:#C2564C;">+</span>
           </button>
           <div class="faq-content px-6 pb-5 text-body text-sm leading-loose">
-            Hoàn toàn phù hợp. Kinh doanh hệ thống chân chính không yêu cầu bạn phải từ bỏ công việc hiện tại. Workshop sẽ cung cấp bộ khung để bạn thiết kế kế hoạch làm thêm tối ưu, tận dụng quỹ thời gian rảnh rỗi để xây dựng dòng tiền thứ hai mà không làm gián đoạn thu nhập chính.
+            Hoàn toàn phù hợp. Kinh doanh hệ thống chân chính không yêu cầu bạn phải từ bỏ công việc hiện tại. Workshop sẽ cung cấp bộ khung để bạn thiết kế kế hoạch làm thêm tối ưu, tận dụng quỹ thời gian rảnh rỗi để xây dựng nguồn thu nhập thứ hai mà không làm gián đoạn thu nhập chính.
           </div>
         </div>
 
@@ -666,13 +673,13 @@
   <footer style="background:#2E1410;" class="text-blush py-12 px-6">
     <div class="max-w-5xl mx-auto text-center">
       <p class="script-accent text-3xl mb-3" style="color:#F8C8A8;">Thu Hương</p>
-      <p class="text-sm opacity-60 mb-6" style="color:#F7E5E0;">Workshop Kinh Doanh Hệ Thống · Hiểu Đúng Để Bứt Phá Thành Công</p>
+      <p class="text-sm opacity-60 mb-6" style="color:#F7E5E0;">Workshop Kinh Doanh Hệ Thống · Hiểu Đúng Để Đi Đường Dài</p>
       <div class="flex flex-wrap justify-center gap-6 text-xs mb-6" style="opacity:0.5;color:#F7E5E0;">
         <a href="#faq" class="hover:opacity-100 transition">FAQ</a>
         <a href="#mentor" class="hover:opacity-100 transition">Về Thu Hương</a>
         <a href="[FANPAGE_URL]" target="_blank" class="hover:opacity-100 transition">Liên hệ Fanpage</a>
       </div>
-      <p class="text-xs" style="opacity:0.3;color:#F7E5E0;">&copy; 2026 · Workshop Kinh Doanh Hệ Thống</p>
+      <p class="text-xs" style="opacity:0.3;color:#F7E5E0;">&copy; 2026 · Workshop Kinh Doanh Hệ Thống · Thu Hương</p>
     </div>
   </footer>
 
@@ -703,6 +710,19 @@
             <label class="block text-xs font-semibold text-heading mb-1">Email</label>
             <input id="f-email" type="email" placeholder="email@gmail.com" class="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none" />
           </div>
+          <div>
+            <label class="block text-xs font-semibold text-heading mb-1">Bạn đang ở đâu trên hành trình? *</label>
+            <select id="f-stage" class="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none bg-white">
+              <option value="">— Chọn —</option>
+              <option value="moi">Mới tìm hiểu, chưa làm</option>
+              <option value="dang-lam">Đang làm kinh doanh hệ thống</option>
+            </select>
+          </div>
+          <label class="flex items-start gap-2 text-xs text-body cursor-pointer">
+            <input id="f-consent" type="checkbox" class="mt-0.5" />
+            <span>Tôi đồng ý cho ban tổ chức lưu trữ &amp; liên hệ theo thông tin đã cung cấp, và đã đọc lưu ý bên dưới.</span>
+          </label>
+          <p class="text-[11px] text-muted leading-relaxed">Nội dung mang tính giáo dục, không cam kết thu nhập; kết quả tùy nỗ lực mỗi người.</p>
           <button onclick="goToStep2()" class="btn-rose w-full justify-center">Tiếp tục · Xem thông tin thanh toán →</button>
         </div>
       </div>
@@ -767,7 +787,7 @@
   var EVENT_DATE_ISO = '2026-08-08T19:30:00+07:00';
   // ───────────────────────────────────────────────────────────────
 
-  var regName = '', regPhone = '', regEmail = '', regCode = '';
+  var regName = '', regPhone = '', regEmail = '', regCode = '', regStage = '';
   var sepayTimer = null, pollCount = 0;
 
   function openModal() {
@@ -797,8 +817,19 @@
     regName  = document.getElementById('f-name').value.trim();
     regPhone = document.getElementById('f-phone').value.trim();
     regEmail = document.getElementById('f-email').value.trim();
+    var stageEl = document.getElementById('f-stage');
+    regStage = stageEl ? stageEl.value : '';
+    var consentEl = document.getElementById('f-consent');
     if (!regName || !regPhone) {
-      alert('Vui long dien day du Ho ten va So dien thoai.');
+      alert('Vui lòng điền đầy đủ Họ tên và Số điện thoại.');
+      return;
+    }
+    if (!regStage) {
+      alert('Vui lòng chọn bạn đang ở đâu trên hành trình.');
+      return;
+    }
+    if (consentEl && !consentEl.checked) {
+      alert('Vui lòng tích chọn đồng ý để tiếp tục.');
       return;
     }
 
@@ -831,7 +862,7 @@
 
     try {
       var existing = JSON.parse(localStorage.getItem('ws_registrations') || '[]');
-      existing.push({ code: regCode, name: regName, phone: regPhone, email: regEmail, note: note, time: new Date().toISOString() });
+      existing.push({ code: regCode, name: regName, phone: regPhone, email: regEmail, stage: regStage, note: note, time: new Date().toISOString() });
       localStorage.setItem('ws_registrations', JSON.stringify(existing));
     } catch(e) {}
   }
@@ -904,36 +935,21 @@
     });
   });
 
-  // Countdown timer (runs only when EVENT_DATE_ISO is a valid date)
-  (function() {
-    var target = new Date(EVENT_DATE_ISO);
-    if (isNaN(target.getTime())) return; // chưa điền ngày → giữ "--"
-    function tick() {
-      var diff = target.getTime() - Date.now();
-      if (diff <= 0) {
-        ['cd-d','cd-h','cd-m','cd-s'].forEach(function(id){ document.getElementById(id).textContent = '00'; });
-        return;
-      }
-      var d = Math.floor(diff / 86400000);
-      var h = Math.floor((diff % 86400000) / 3600000);
-      var m = Math.floor((diff % 3600000) / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('cd-d').textContent = String(d);
-      document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-      document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-      document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-    }
-    tick();
-    setInterval(tick, 1000);
-  })();
-
-  // Fade-up scroll observer
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(function(el){ obs.observe(el); });
+  // Fade-up scroll observer (có fallback nếu trình duyệt không hỗ trợ)
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(function(el){ obs.observe(el); });
+  } else {
+    document.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
+  }
+  // Failsafe: đảm bảo nội dung luôn hiện sau 2s dù observer có trục trặc
+  setTimeout(function(){
+    document.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
+  }, 2000);
   </script>
 </body>
 </html>
